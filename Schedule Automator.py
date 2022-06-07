@@ -33,7 +33,7 @@ def getSchedule(worksheet):
     
     schedule = '' 
     for key, value in dictionary_values.items():
-        # Iterating through the dictionary to insert it into the schedule string. 
+        # Formatting the dictionary into a string.
         if value != '':  
             schedule += key + ': ' + value + '\n' 
     print(schedule)
@@ -44,5 +44,3 @@ def getSchedule(worksheet):
 # Main program
 getSchedule('Week 1')
 getSchedule('Week 2') 
-
-# End
