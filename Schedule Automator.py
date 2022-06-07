@@ -26,7 +26,7 @@ def getSchedule():
     
     schedule = '' 
     for key, value in dictionary_values.items():
-        # Iterating through the dictionary to insert it into the schedule string. 
+        # Iterating through the dictionary to insert the key values into the schedule string. 
         if value != '':  
             schedule += key + ': ' + value + '\n' 
     print(schedule)
