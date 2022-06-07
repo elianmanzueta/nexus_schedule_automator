@@ -5,10 +5,11 @@
     Date last modified: 06/06/2022
     Python Version: 3.10.2
 '''
+
 import gspread
 import sys
 
-sys.stdout = open("/Users/elian/Desktop/Nexus/Schedule/Schedule.txt", 'w')
+sys.stdout = open("/Users/elian/Desktop/Nexus/Schedule/Schedule.txt", 'w') # Write terminal output to text file.
 sa = gspread.service_account()
 
 def getSchedule():
