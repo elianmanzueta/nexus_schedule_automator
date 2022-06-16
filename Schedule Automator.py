@@ -2,12 +2,10 @@
     File name: Schedule Automator.py
     Author: Elian Manzueta
     Date created: 06/06/2022
-    Date last modified: 06/06/2022
     Python Version: 3.10.2
 '''
 import gspread
 import sys
-import re
 
 sys.stdout = open("/Users/elian/Desktop/Nexus/Schedule/Schedule.txt", 'w')
 sa = gspread.service_account()
@@ -17,11 +15,11 @@ print("Hey Hannah, here are my hours: \n")
 # Accessing the sheet.
 sh = sa.open("ScheduleTest")
 
-# Main function
+# Main function.
 def getSchedule(worksheet):
     wks = sh.worksheet(worksheet) # Selects the desired sheet.
     total = wks.acell('I10').value # Total hours.
-    print(wks.acell('B2').value, '-', wks.acell('H2').value, '\n') # Pay Period
+    print(wks.acell('B2').value, '-', wks.acell('H2').value, '\n') # Pay Period.
     days = (wks.get('B2:H2')) # Batch get of all values in B2:H2.
     hours = (wks.get('B10:H10')) # Batch get of all values in B10:H10.
     
@@ -40,9 +38,9 @@ def getSchedule(worksheet):
             schedule += key + ': ' + value + '\n' 
     print(schedule)
 
-    # Total hours worked
+    # Total hours worked.
     print(f"Total: {total} hours\n")
 
-# Main program
+# Main program.
 getSchedule('Week 1')
 getSchedule('Week 2') 
