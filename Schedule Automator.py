@@ -13,11 +13,11 @@ sa = gspread.service_account()
 print("Hey Hannah, here are my hours: \n")
           
 # Accessing the sheet.
-sh = sa.open("ScheduleTest")
+sh = sa.open_by_url("https://docs.google.com/spreadsheets/d/1RmnOQ9ll5Xaa47W1V7_DWXH7dglpvJ1COBwYoaQ1JnA")
 
 # Main function.
 def getSchedule(worksheet):
-    wks = sh.worksheet(worksheet) # Selects the desired sheet.
+    wks = sh.get_worksheet(worksheet) # Selects the desired sheet by index.
     total = wks.acell('I10').value # Total hours.
     print(wks.acell('B2').value, '-', wks.acell('H2').value, '\n') # Pay Period.
     days = (wks.get('B2:H2')) # Batch get of all values in B2:H2.
@@ -42,5 +42,5 @@ def getSchedule(worksheet):
     print(f"Total: {total} hours\n")
 
 # Main program.
-getSchedule('Week 1')
-getSchedule('Week 2') 
+getSchedule(2)
+getSchedule(3) 
